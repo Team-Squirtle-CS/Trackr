@@ -12,6 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 const userRouter = require('./routes/users');
 const applicationRouter = require('./routes/applications');
 
+const applicationController = require('./controllers/applicationController')
+
 app.use('/users', userRouter);
 app.use('/applications', applicationRouter);
 
@@ -28,6 +30,7 @@ app.use('/applications', applicationRouter);
 
 
 app.get('/',
+  applicationController.getUserApplications,
   (req, res) => {
     res.status(200).json('hello world');
   }

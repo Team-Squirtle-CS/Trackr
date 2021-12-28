@@ -9,16 +9,16 @@ userController.userExists = async (req, res, next) => {
   try {
     //extract unique google ID from user and search for a match
     const {googleId} = req.body;
-    const value = [googleId];
+    const values = [googleId];
 
     const query = `SELECT * FROM users WHERE googleid = $1`;
     const response = await db.query(query, values);
 
     //assign boolean to res.locals.userExists for next middleware to check
-    if (!response.rows.length) {
-      res.locals.userExists = false;
-    } else {
+    if (response.rows.length) {
       res.locals.userExists = true;
+    } else {
+      res.locals.userExists = false;
     }
     return next();
 
