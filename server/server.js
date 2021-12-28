@@ -18,13 +18,13 @@ app.use('/applications', applicationRouter);
 
 
 // ---flow test to see all incoming requests---
-app.use('/', (req, res, next) => {
-  console.log(`**** FLOW TEST ****
-    Method: ${req.method}
-    url: ${req.url}
-    body: ${JSON.stringify(req.body)}`);
-  next();
-});
+// app.use('/', (req, res, next) => {
+//   console.log(`**** FLOW TEST ****
+//     Method: ${req.method}
+//     url: ${req.url}
+//     body: ${JSON.stringify(req.body)}`);
+//   next();
+// });
 
 
 app.get('/',
@@ -73,7 +73,7 @@ app.use(function (err, req, res, next) {
 });
 
 
-console.log("ssss");
+
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`);
 });
