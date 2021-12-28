@@ -1,6 +1,8 @@
 # additional 
 .DS_Store
 /build
+.vscode/
+package-lock.json
 
 # Logs
 logs
