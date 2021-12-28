@@ -20,17 +20,16 @@ app.use('/applications', applicationRouter);
 
 
 // ---flow test to see all incoming requests---
-// app.use('/', (req, res, next) => {
-//   console.log(`**** FLOW TEST ****
-//     Method: ${req.method}
-//     url: ${req.url}
-//     body: ${JSON.stringify(req.body)}`);
-//   next();
-// });
+app.use('/', (req, res, next) => {
+  console.log(`**** FLOW TEST ****
+    Method: ${req.method}
+    url: ${req.url}
+    body: ${JSON.stringify(req.body)}`);
+  next();
+});
 
 
 app.get('/',
-  applicationController.getUserApplications,
   (req, res) => {
     res.status(200).json('hello world');
   }
