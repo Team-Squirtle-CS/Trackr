@@ -8,4 +8,4 @@ applicationController.addApplication = async (req, res, next) => {
 }
 
 
-export default applicationController;
+module.exports = applicationController;
