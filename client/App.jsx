@@ -49,7 +49,6 @@ class App extends Component {
                     <h1>nothing</h1>
                 );
         }
-        <h1>missed switch statement</h1>
     }
 }
 
