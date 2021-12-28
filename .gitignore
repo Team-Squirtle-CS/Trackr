@@ -1,7 +1,7 @@
 # additional 
 .DS_Store
 /build
-
+.vscode/
 # Logs
 logs
 *.log
