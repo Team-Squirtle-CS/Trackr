@@ -2,7 +2,11 @@ const express = require('express');
 const app = express();
 const path = require('path');
 // not sure if jwt is needed 
+<<<<<<< HEAD
 //const jwt = require('jsonwebtoken');
+=======
+const jwt = require('jsonwebtoken');
+>>>>>>> dev
 
 const PORT = 3000;
 
