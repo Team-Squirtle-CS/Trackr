@@ -11,10 +11,6 @@ router.post('/add', userController.userExists, userController.addUser, (req, res
 });
 
 
-// router.get('/login', userController.loginUser, (req, res) => {
-//   return res.status(200).json(res.locals);
-// })
-
 
 
 module.exports = router;
