@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Login from './components/login.jsx'
 import Dashboard from './components/dashboard.jsx'
 import Visualizer from './components/visualizer.jsx'
+import NavBar from './components/navbar.jsx'
 
 const mapStateToProps = (state) => ({
   // add pertinent state here
@@ -33,7 +34,8 @@ class App extends Component {
             case 'dashboard': 
                 return (
                     <div>
-                        <Dashboard/>
+                      <NavBar/>
+                      <Dashboard/>
                     </div>
                 );
             case 'visualizer': 
