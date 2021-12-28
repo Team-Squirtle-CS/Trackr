@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { connect } from 'react-redux';
+import Login from './components/login.jsx'
+import Dashboard from './components/dashboard.jsx'
+import Visualizer from './components/visualizer.jsx'
 
 const mapStateToProps = (state) => ({
   // add pertinent state here
@@ -12,12 +15,39 @@ class App extends Component {
     super(props);
   }
 
+// make a switch statement that checks what value of this.props.currPage is
+// by default, it should be 'login'
+// if google OAuth is successfull, it should be reassigned to 'dashboard'
+// when Go To Visualizer button is pushed, it should be reassigned to 'visualizer'
+// when Go To Dashboard button is pushed, it should be reassigned to 'dashboard'
+// depending on which case is true, 
+
     render() {
-        return (
-            <div>
-                <h1>helloooooo world!!!! {this.props.currPage}</h1>
-            </div>
-        );
+        switch (this.props.currPage) {
+            case 'login': 
+                return (
+                    <div>
+                        <Login/>
+                    </div>
+                );
+            case 'dashboard': 
+                return (
+                    <div>
+                        <Dashboard/>
+                    </div>
+                );
+            case 'visualizer': 
+                return (
+                    <div>
+                        <Visualizer/>
+                    </div>
+                );
+            default:
+                return (
+                    <h1>nothing</h1>
+                );
+        }
+        <h1>missed switch statement</h1>
     }
 }
 

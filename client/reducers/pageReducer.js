@@ -8,10 +8,10 @@ const initialState = {
 
 const pageReducer = (state = initialState, action) => {
   switch(action.type) {
-    case types.LOG_IN: {
+    case types.SET_PAGE: {
       return {
         ...state,
-        currPage: 'home',
+        currPage: action.payload,
       };
     }
     default: return state;

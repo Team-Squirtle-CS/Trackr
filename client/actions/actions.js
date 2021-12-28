@@ -1,7 +1,10 @@
 import * as types from './actionTypes';
-import axios from 'axios';
 
-export const logIn = (username, password) => (dispatch) => {
+export const setPage = (page) => (dispatch) => {
+  dispatch({ //action being created
+    type: 'SET_PAGE',
+    payload: page
+  })
   // const request = {
   //   method: 'GET',
   //   url: '/database/login',
