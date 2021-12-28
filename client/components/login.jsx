@@ -1,21 +1,38 @@
 import React, { useState } from "react";
 import { GoogleLogin } from 'react-google-login';
 import { connect } from 'react-redux';
-// get action we need to update state with 
-import { setPage } from '../actions/actions';
+// get actions we need to update state with 
+import { setPage, setUser } from '../actions/actions';
 
 
 const mapDispatchToProps = (dispatch) => ({
     setPage: (page) => dispatch(setPage(page)), 
+    setUser: (user) => dispatch(setUser(user))
 });
 
 const login = (props) => {
 
-    function handleLogin(response){
-        console.log(response);
+    // handle successful login, redirect to dashboard + update user state 
+    function handleSuccessfulLogin(response){
+        // create user object
+        const user = {
+            googleId: response.googleId, 
+            firstName: response.profileObj.givenName,
+            lastName: response.profileObj.familyName, 
+            email: response.profileObj.email, 
+            avatar: response.profileObj.imageUrl
+        }
         // update current user 
+        props.setUser(user); 
+        // update current page to dashboard  
         props.setPage('dashboard');
-        // update current page 
+        return;
+    }
+
+    function handleUnsuccessfulLogin(response){
+        console.log(response); 
+        window.alert('Sorry that login did not work'); 
+        return; 
     }
 
     return (
@@ -24,8 +41,8 @@ const login = (props) => {
                 <GoogleLogin
                     clientId="705527790784-pe8e6p9qspsosjv014vjioea69jjjb9n.apps.googleusercontent.com"
                     buttonText="Login"
-                    onSuccess={handleLogin}
-                    onFailure={handleLogin}
+                    onSuccess={handleSuccessfulLogin}
+                    onFailure={handleUnsuccessfulLogin}
                     cookiePolicy={'single_host_origin'}
                 />
         </div>
