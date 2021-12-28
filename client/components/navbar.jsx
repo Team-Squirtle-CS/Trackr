@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 const NavBar = (props) => {
     return (
         <div>
-            <h2>Hello, {props.user.firstName}</h2>
+            <h2 className="greeting">Hello, {props.user.firstName}</h2>
         </div>
     );
 };
