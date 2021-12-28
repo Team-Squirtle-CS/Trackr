@@ -2,10 +2,16 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+const userRouter = require('./routes/users');
+const applicationRouter = require('./routes/applications');
+
 const PORT = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/users', userRouter);
+app.use('/applications', applicationRouter);
 
 app.get('/',
   (req, res) => {
@@ -19,7 +25,6 @@ app.get('/bundle.js',
   }
 );
 
-console.log("ssss");
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`);
 });
