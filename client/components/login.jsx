@@ -36,15 +36,15 @@ const login = (props) => {
     }
 
     return (
-        <div>
-            <h1>login</h1>
-                <GoogleLogin
-                    clientId="705527790784-pe8e6p9qspsosjv014vjioea69jjjb9n.apps.googleusercontent.com"
-                    buttonText="Login"
-                    onSuccess={handleSuccessfulLogin}
-                    onFailure={handleUnsuccessfulLogin}
-                    cookiePolicy={'single_host_origin'}
-                />
+        <div className="loginBox">
+            trackr
+            <GoogleLogin
+                clientId="705527790784-pe8e6p9qspsosjv014vjioea69jjjb9n.apps.googleusercontent.com"
+                buttonText="Login"
+                onSuccess={handleSuccessfulLogin}
+                onFailure={handleUnsuccessfulLogin}
+                cookiePolicy={'single_host_origin'}
+            />
         </div>
     );
 };
