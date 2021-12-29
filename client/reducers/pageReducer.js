@@ -3,7 +3,7 @@ import * as types from '../actions/actionTypes';
 const initialState = {
   currPage: 'login',
   user: null,
-  loggedIn: false
+  applications: []; 
 };
 
 const pageReducer = (state = initialState, action) => {
