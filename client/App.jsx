@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { connect } from 'react-redux';
+import styles from './stylesheets/styles.scss';
 import Login from './components/login.jsx'
 import Dashboard from './components/dashboard.jsx'
 import Visualizer from './components/visualizer.jsx'
