@@ -15,7 +15,7 @@ describe('Page reducer', () => {
         state = {
             currPage: 'login',
             user: null,
-            loggedIn: false
+            applications: []; 
         };
     });
 
