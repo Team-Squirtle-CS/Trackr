@@ -12,6 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 const userRouter = require('./routes/users');
 const applicationRouter = require('./routes/applications');
 
+const applicationController = require('./controllers/applicationController')
+
 app.use('/users', userRouter);
 app.use('/applications', applicationRouter);
 
@@ -73,7 +75,7 @@ app.use(function (err, req, res, next) {
 });
 
 
-console.log("ssss");
+
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`);
 });
