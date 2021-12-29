@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { GoogleLogin } from 'react-google-login';
 import { connect } from 'react-redux';
 // get actions we need to update state with 
-import { setPage, setUser } from '../actions/actions';
+import { setPage, setUser } from '../actions/pageActions';
 
 
 const mapDispatchToProps = (dispatch) => ({
