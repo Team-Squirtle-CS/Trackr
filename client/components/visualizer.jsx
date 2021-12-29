@@ -5,6 +5,19 @@ import applications from './visData';
 const visualizer = () => {
   //in future, will get application objects from state through mapStateToProps
 
+  const onDragOver = (e) => {
+    e.preventDefault();
+  } 
+
+  const onDrop = (e, stat) => {
+    let compName = e.dataTransfer.getData("company");
+    console.log(compName);
+    //change status to status of dropped section through http request, update db and state through redux
+    // for (let obj of applications) {
+    //   if (obj.company === compName) obj.status = stat;
+    // }
+  }
+
   //convert to switch case and push accordingly?
   const incompletes = applications.filter(app => app.status === 'incomplete');
   const pendings = applications.filter(app => app.status === 'pending');
@@ -23,7 +36,7 @@ const visualizer = () => {
 
           <div id="positive-stage-container">
 
-            <div className="app-stage" id="pendings">
+            <div className="app-stage" id="pendings" onDragOver={(e)=> onDragOver(e)} onDrop={(e)=> onDrop(e, "pending")}>
               <center><h2>Pending</h2></center>
               <BoxContainer apps={pendings}/>
             </div>
@@ -68,6 +81,10 @@ const visualizer = () => {
 };
 
 const BoxContainer = (props) => {
+  const onDragStart = (e, company) => {
+    e.dataTransfer.setData("company", company);
+  }
+
   const appBoxes = props.apps.map((app, i = 0) => {
     return <div 
     key={i}
@@ -77,6 +94,7 @@ const BoxContainer = (props) => {
     location={app.location}
     salary={app.salary}
     status={app.status}
+    onDragStart={(e)=> onDragStart(e, app.company)}
     draggable
     >{app.company}</div>
   });

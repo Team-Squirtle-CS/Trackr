@@ -41,15 +41,9 @@ app.get('/bundle.js',
   }
 );
 // route for signin
-app.get('/login', (req, res) => {
-  return res.json(res.locals);
+app.get('/test', (req, res) => {
+  return res.send("test endpoint reached");
 });
-
-// route for sign-up
-app.post('/signup', (req, res) => {
-  return res.status(201).json(res.locals);
-});
-
 
 
 
