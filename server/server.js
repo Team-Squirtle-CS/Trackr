@@ -42,12 +42,6 @@ app.get('/bundle.js',
     res.status(200).sendFile(path.join(__dirname, '../build/bundle.js'));
   }
 );
-// route for signin
-app.get('/test', (req, res) => {
-  return res.send("test endpoint reached");
-});
-
-
 
 // catch-all route handler for any requests to an unknown route 
 app.use((req, res) => {
