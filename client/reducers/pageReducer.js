@@ -2,9 +2,7 @@ import * as types from '../actions/actionTypes';
 
 const initialState = {
   currPage: 'login',
-  user: null,
-  loggedIn: false
-  // create a new piece of state, applications, with a value of an empty array
+  user: {},
 };
 
 const pageReducer = (state = initialState, action) => {
@@ -17,9 +15,10 @@ const pageReducer = (state = initialState, action) => {
     }
     // update user info 
     case types.SET_USER: {
+      console.log("action.payload.user = ", action.payload.user)
       return {
         ...state,
-        user: action.payload
+        user: action.payload.user
       }
     }
     // default state 
