@@ -4,6 +4,7 @@ const initialState = {
   currPage: 'login',
   currentUserID: '',
   loggedIn: false
+  // create a new piece of state, applications, with a value of an empty array
 };
 
 const pageReducer = (state = initialState, action) => {
@@ -16,6 +17,7 @@ const pageReducer = (state = initialState, action) => {
     }
     default: return state;
   } 
+  // create a new case where types.GET_APPLICATIONS, return spread state and applications: action.payload
 }
 
 export default pageReducer;

@@ -18,3 +18,5 @@ export const setPage = (page) => (dispatch) => {
   //   });                                                                                                                          
   // }).catch(console.error);
 }
+
+// create a new function, getApplications, with the type GET_APPLICATIONS and payload will be all of the rows from the applications table in the DB
