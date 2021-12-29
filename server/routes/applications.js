@@ -4,14 +4,17 @@ const router = express.Router();
 const applicationController = require('../controllers/applicationController');
 
 
-
+router.post('/get-apps', applicationController.getUserApplications, (req, res) => {
+  //gets all applications for current user by ID
+  return res.status(201).json(res.locals);
+})
 
 router.post('/create-app', applicationController.addApplication, (req, res) => {
   //creates a new application for user
   return res.status(201).json(res.locals);
 })
 
-router.patch('/edit-app', applicationController.editApplication, (req, res) => {
+router.put('/edit-app', applicationController.editApplication, (req, res) => {
   //updates application if user edits
   return res.status(201).json(res.locals);
 })

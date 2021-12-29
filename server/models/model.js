@@ -1,6 +1,6 @@
 const { Pool } = require('pg');
 
-const PG_URI = ''; //need db setup
+const PG_URI = ''; 
 
 const pool = new Pool({
   connectionString: PG_URI

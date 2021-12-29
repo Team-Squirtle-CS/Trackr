@@ -12,7 +12,7 @@ applicationController.getUserApplications = async (req, res, next) => {
 
     const response = await db.query(query, values);
     if (response.rows.length) {
-      res.locals.applications = response.rows[0];
+      res.locals.applications = response.rows;
       return next();
     } else {
       throw err;
@@ -54,11 +54,12 @@ applicationController.editApplication = async (req, res, next) => {
     const values = [company, description, location, salary, status, userID];
 
     const query = `
-    UPDATE applications SET
-    company = $1
-    description = $2
-    location = $3
-    salary = $4
+    UPDATE applications 
+    SET
+    company = $1,
+    description = $2,
+    location = $3,
+    salary = $4,
     status = $5
     WHERE user_id = $6
     RETURNING *`;
@@ -72,6 +73,7 @@ applicationController.editApplication = async (req, res, next) => {
       throw err;
     }
   } catch (err) {
+    res.status(404).send("Failed to update application")
     return next(err);
   }
 }
@@ -84,17 +86,20 @@ applicationController.deleteApplication = async (req, res, next) => {
 
     const query = `
     DELETE FROM applications
-    WHERE _id = $1`;
+    WHERE _id = $1
+    RETURNING *`;
     const response = await db.query(query, values);
 
     if (response.rows.length) {
       const deleted = response.rows[0];
       res.locals.deletedApp = deleted;
-      return next()
+      console.log("deleted App", res.locals.deletedApp);
+      return next();
     } else {
       throw err;
     }
   } catch (err) {
+    res.send("Failed to delete application")
     return next(err);
   }
 }
