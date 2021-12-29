@@ -5,7 +5,7 @@ const userController = require('../controllers/userController');
 
 
 
-
+// add user to database 
 router.post('/add', 
   userController.userExists, 
   userController.addUser, 
