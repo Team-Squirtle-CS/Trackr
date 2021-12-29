@@ -5,6 +5,7 @@ const userController = {};
 
 
 userController.userExists = async (req, res, next) => {
+  console.log('GOT THIS FAR');
   //check if user already exists in the database
   try {
     console.log("userExists entered");
@@ -18,7 +19,9 @@ userController.userExists = async (req, res, next) => {
     //assign boolean to res.locals.userExists for next middleware to check
     res.locals.userExists = response.rows.length > 0;
     res.locals.user = req.body.user;
-
+    // save userId 
+    res.locals.user.userId = (response.rows.length > 0) ? response.rows[0]._id: undefined; 
+    console.log(`res.locals.userId: ${res.locals.userId}`);
     return next();
   } catch (err) {
     res.status(401).send("Failed to check if user exists in database")
