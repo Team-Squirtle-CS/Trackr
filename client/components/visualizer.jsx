@@ -24,6 +24,7 @@ const visualizer = () => {
   const phoneScreens = applications.filter(app => app.status === 'phoneScreen');
   const behaviorals = applications.filter(app => app.status === 'behavioral');
   const technicals = applications.filter(app => app.status === 'technical');
+  const sdis = applications.filter(app => app.status === 'sdi');
   const rejections = applications.filter(app => app.status === 'rejected');
   const offers = applications.filter(app => app.status === 'offer');
   
@@ -52,6 +53,11 @@ const visualizer = () => {
               <div className="app-stage" id="behaviorals">
                 <h3>Behavioral</h3>
                 <BoxContainer apps={behaviorals}/>
+              </div>
+
+              <div className="app-stage" id="sdis">
+                <h3>SDIs</h3>
+                <BoxContainer apps={sdis}/>
               </div>
 
               <div className="app-stage" id="technicals">
@@ -96,7 +102,7 @@ const BoxContainer = (props) => {
     status={app.status}
     onDragStart={(e)=> onDragStart(e, app.company)}
     draggable
-    >{app.company}</div>
+    ><center>{app.company}</center></div>
   });
 
   return(

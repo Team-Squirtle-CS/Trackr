@@ -18,7 +18,7 @@ const applications = [
     description: 'FAANG',
     location: 'San Francisco',
     salary: 165000,
-    status: 'pending'
+    status: 'sdi'
   },
   {
     company: 'Netflix',
@@ -117,6 +117,20 @@ const applications = [
     location: 'San Francisco',
     salary: 150000,
     status: 'phoneScreen'
+  },
+  {
+    company: 'Amazon',
+    description: 'FAANG',
+    location: 'San Francisco',
+    salary: 150000,
+    status: 'technical'
+  },
+  {
+    company: 'Amazon',
+    description: 'FAANG',
+    location: 'San Francisco',
+    salary: 150000,
+    status: 'technical'
   },
 ]
 
