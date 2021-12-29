@@ -1,5 +1,6 @@
 import * as types from './actionTypes';
 
+
 // add new application to user's applications
 export const addApplication = (application) => (dispatch) => {
     // action being created
