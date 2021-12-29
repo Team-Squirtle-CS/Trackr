@@ -3,6 +3,7 @@
 /build
 .vscode/
 package-lock.json
+GoogleSecrets.json
 
 # Logs
 logs

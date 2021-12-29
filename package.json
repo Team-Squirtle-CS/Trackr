@@ -7,7 +7,9 @@
     "build": "NODE_ENV=production webpack",
     "dev": "NODE_ENV=development webpack serve --open --hot",
     "server": "nodemon server/server.js",
-    "start": "NODE_ENV=development concurrently \"webpack serve --open --hot\" \"nodemon server/server.js\""
+    "start": "NODE_ENV=development concurrently \"webpack serve --open --hot\" \"nodemon server/server.js\"",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
   },
   "author": "Team Trackr",
   "license": "MIT",
@@ -45,10 +47,12 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.5",
     "nodemon": "^2.0.7",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
+    "supertest": "^6.1.6",
     "webpack": "^5.61.0",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.4.0"
