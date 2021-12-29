@@ -22,6 +22,7 @@ const newApplication = (props) => {
     const [salary, setSalary] = useState(0);
     const [deadline, setDeadline] = useState(new Date());
     const [notes, setNotes] = useState('');
+    const [status, setStatus] = useState('');
 
     const addApplication = () => {
         // get userID from DB -> need it to add application to DB 
@@ -32,7 +33,7 @@ const newApplication = (props) => {
             location: location, 
             position: position, 
             salary: salary, 
-            status: 'test status', 
+            status: status, 
             deadline: deadline, 
             notes: notes, 
             userID: props.user.userId
@@ -53,6 +54,16 @@ const newApplication = (props) => {
                     <input type='number' placeholder="Salary" value={salary} onChange={e => setSalary(e.target.value)}></input>
                     <input type='date' placeholder="Deadline" value={deadline} onChange={e => setDeadline(e.target.value)}></input>
                     <input type='text' placeholder="Notes" value={notes} onChange={e => setNotes(e.target.value)}></input>
+                    <select name="status" id="status" value={status} onChange={e => setStatus(e.target.value)}>
+                      <option value="incomplete">Not Sent</option>
+                      <option value="pending">Pending</option>
+                      <option value="phoneScreen">Phone Screen</option>
+                      <option value="behavioral">Behavioral Int.</option>
+                      <option value="sdi">Systems Design Int.</option>
+                      <option value="technical">Technical Int.</option>
+                      <option value="offer">Offered</option>
+                      <option value="rejected">Rejected</option>
+                    </select>
                     <button type="button" onClick={addApplication}>Add Application</button>
                 </form>
             </span>
