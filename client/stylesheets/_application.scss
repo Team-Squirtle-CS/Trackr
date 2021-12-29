@@ -1,16 +1,17 @@
-@import 'variables';
+@import '_variables';
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 
-#root {
+#dashboard {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .loginBox {
-  font-family: 'Cabin', sans-serif;;
+  font-family: 'Cabin', sans-serif;
   line-height: 150px;
   color: white;
   font-size: 100px;
@@ -20,5 +21,5 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: $color-accent
+  background-color: $color-background;
 }

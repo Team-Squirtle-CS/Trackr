@@ -3,7 +3,7 @@ import DataGrid from "./grid.jsx";
 
 const dashboard = () => {
     return (
-        <div>
+        <div id='dashboard'>
             <DataGrid/>    
             <span>
                 <form>

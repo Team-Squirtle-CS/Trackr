@@ -61,7 +61,7 @@ const rows = [
 
 export default function DataGridDemo() {
   return (
-    <div style={{ height: 400, width: "100%" }}>
+    <div style={{ height: 400, width: "61%" }}>
       <DataGrid
         sx={{
           boxShadow: 2,
