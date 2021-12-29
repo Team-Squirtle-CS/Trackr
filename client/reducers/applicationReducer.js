@@ -33,8 +33,6 @@ const applicationReducer = (state = initialState, action) => {
             };
         }
 
-        // 
-
         // default state 
         default: return { ...state };
     }
