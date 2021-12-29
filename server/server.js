@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require('cors');
 // not sure if jwt is needed 
 //const jwt = require('jsonwebtoken');
 
 const PORT = 3000;
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

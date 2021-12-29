@@ -1,8 +1,10 @@
 import * as types from '../actions/actionTypes';
 
 const initialState = {
-  currPage: 'visualizer',
-  user: null,
+
+  currPage: 'login',
+  user: {},
+
 };
 
 const pageReducer = (state = initialState, action) => {
@@ -15,14 +17,16 @@ const pageReducer = (state = initialState, action) => {
     }
     // update user info 
     case types.SET_USER: {
+      console.log("action.payload.user = ", action.payload.user)
       return {
         ...state,
-        user: action.payload
+        user: action.payload.user
       }
     }
     // default state 
     default: return { ...state };
   } 
+  // create a new case where types.GET_APPLICATIONS, return spread state and applications: action.payload
 }
 
 export default pageReducer;
