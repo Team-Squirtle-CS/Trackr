@@ -7,23 +7,19 @@ const userController = {};
 userController.userExists = async (req, res, next) => {
   //check if user already exists in the database
   try {
+    console.log("userExists entered");
     //extract unique google ID from user and search for a match
-    const {googleId} = req.body;
+    const {googleId} = req.body.user;
     const values = [googleId];
     console.log(googleId)
     const query = `SELECT * FROM users WHERE googleid = $1`;
     const response = await db.query(query, values);
-    console.log(response.rows[0]);
     
     //assign boolean to res.locals.userExists for next middleware to check
-    if (response.rows.length) {
-      res.locals.userExists = true;
-    } else {
-      res.locals.userExists = false;
-    }
+    res.locals.userExists = response.rows.length > 0;
+    res.locals.user = req.body.user;
 
     return next();
-
   } catch (err) {
     res.status(401).send("Failed to check if user exists in database")
     return next(err);
@@ -39,8 +35,8 @@ userController.addUser = async (req, res, next) => {
 
   try {
     //add user's Google login info to database if not present
-    const {email, firstName, lastName, googleId, picture} = req.body;
-    const values = [email, firstName, lastName, googleId, picture];
+    const {email, firstName, lastName, googleId, avatar} = req.body.user;
+    const values = [email, firstName, lastName, googleId, avatar];
 
     const query = `
     INSERT INTO users(email, firstname, lastname, googleid, avatar)
@@ -49,7 +45,6 @@ userController.addUser = async (req, res, next) => {
     await db.query(query, values);
 
     return next();
-
   } catch (err) {
     res.status(401).send("Failed to add user data")
     return next(err);
