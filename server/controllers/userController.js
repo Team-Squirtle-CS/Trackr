@@ -9,15 +9,17 @@ userController.userExists = async (req, res, next) => {
   try {
     console.log("userExists entered");
     //extract unique google ID from user and search for a match
-    const {googleId} = req.body.user;
+    const {googleId} = req.body;
     const values = [googleId];
-    console.log(googleId)
+
     const query = `SELECT * FROM users WHERE googleid = $1`;
     const response = await db.query(query, values);
     
     //assign boolean to res.locals.userExists for next middleware to check
     res.locals.userExists = response.rows.length > 0;
-    res.locals.user = req.body.user;
+    res.locals.user = req.body;
+    // save userId 
+    res.locals.user.userId = (response.rows.length > 0) ? response.rows[0]._id: undefined; 
 
     return next();
   } catch (err) {
@@ -35,7 +37,7 @@ userController.addUser = async (req, res, next) => {
 
   try {
     //add user's Google login info to database if not present
-    const {email, firstName, lastName, googleId, avatar} = req.body.user;
+    const {email, firstName, lastName, googleId, avatar} = req.body;
     const values = [email, firstName, lastName, googleId, avatar];
 
     const query = `

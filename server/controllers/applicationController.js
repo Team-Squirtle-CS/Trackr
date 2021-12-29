@@ -25,7 +25,9 @@ applicationController.getUserApplications = async (req, res, next) => {
 
 
 applicationController.addApplication = async (req, res, next) => {
+  console.log("addApplication entered")
   try {
+    console.log("req.body =", req.body);
     //extract information to be added to database
     const {company, description, location, salary, status, userID} = req.body;
     const values = [company, description, location, salary, status, userID];

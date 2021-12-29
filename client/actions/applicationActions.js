@@ -1,13 +1,24 @@
 import * as types from './actionTypes';
+import axios from 'axios';
 
+axios.defaults.baseURL = 'http://localhost:3000';
 
 // add new application to user's applications
 export const addApplication = (application) => (dispatch) => {
-    // action being created
-    dispatch({
-        type: types.ADD_APPLICATION,
-        payload: application
-    })
+    // setup axios request 
+    const request = {
+        method: 'POST',
+        url: '/applications/create-app',
+        data: application
+    }
+
+    axios.request(request).then((response) => {
+        //action being created
+        dispatch({
+            type: types.ADD_APPLICATION,
+            payload: response.data
+        })
+    }).catch( err => console.log(err));
 };
 
 // delete an application 
