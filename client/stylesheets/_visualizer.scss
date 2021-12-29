@@ -2,13 +2,16 @@
 
 body {
   margin: 0px;
+  h1, h2, h3 {
+    color: $main-font-color;
+  }
 }
 
 #visualizer-page {
   font-family: $title-font;
   display: flex;
   flex-direction: column;
-  background-color: $color-accent;
+  background-color: $color-background;
   margin: 0px;
   padding-bottom: 60px;
 }
@@ -27,7 +30,7 @@ body {
 
     .app-box {
       margin: 10px;
-      border: 1px solid purple;
+      background-color: rgb(219, 244, 254);
     }
   }
 
@@ -36,7 +39,7 @@ body {
 
     .app-box {
       margin: 10px;
-      background-color: rgb(141, 203, 223);
+      background-color: rgb(179, 247, 255);
     }
   }
 
@@ -54,7 +57,7 @@ body {
 
       .app-box {
         margin: 10px;
-        background-color: rgb(245, 250, 209);
+        background-color: rgb(96, 255, 231);
       }
     }
 
@@ -62,7 +65,7 @@ body {
 
       .app-box {
         margin: 10px;
-        background-color: rgb(211, 150, 110);
+        background-color: rgb(96, 255, 231);
       }
     }
 
@@ -70,7 +73,7 @@ body {
 
       .app-box {
         margin: 10px;
-        background-color: rgb(161, 146, 255);
+        background-color: rgb(96, 255, 231);
       }
     }
 
@@ -86,7 +89,7 @@ body {
 
     .app-box {
       margin: 10px;
-      background-color: rgb(151, 223, 151);
+      background-color: rgb(80, 255, 173)
     }
   }
 }
@@ -99,35 +102,35 @@ body {
   margin: auto;
   justify-content: space-between;
 
-  #incompletes {
+  #incompletes, #rejections {
     height: 240px;
     width: 48%;
     margin: auto;
+    justify-content: flex-start;
 
     .app-box {
       margin: 10px;
-      background-color: rgb(147, 147, 147);
     }
   }
+  #incompletes .app-box {
+    background-color: rgb(216, 216, 232);
+  }
 
-  #rejections {
-    height: 240px;
-    width: 48%;
-    margin: auto;
+  #rejections .app-box {
+    background-color: rgb(255, 183, 170);
+  }
 
-    .app-box {
-      margin: 10px;
-      background-color: rgba(174, 88, 73, 0.598);
-    }
+  .vis-box {
+    height: auto;
   }
 }
 
 .vis-box {
   height: 94%;
   width: 100%;
-  background-color: $color-accent-light;
+  background-color: $color-accent;
   border-radius: 12px;
-  box-shadow: 0px 10px 10px 0px $color-accent-dark;
+  box-shadow: 0px 10px 10px 0px #150326;
   display: inline-flex;
   flex-wrap: wrap;
   align-content: flex-start;

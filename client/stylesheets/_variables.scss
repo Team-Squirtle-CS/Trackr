@@ -4,14 +4,15 @@ $title-font: 'Playfair Display', serif;
 $title-font-size: 25px;
 $title-line-height: 30px;
 $little-font: 'Source Sans Pro', sans-serif;
+$main-font-color: rgb(232, 232, 232);
 
 $box-padding: 2vw;
 
-$color-background: #778899;
+$color-background: #230339;
 $color-background-light: lighten($color-background, 22);
 $color-background-dark: darken($color-background, 22);
 
-$color-accent: #804fad;
+$color-accent: #ddcbff;
 $color-accent-light: lighten($color-accent, 22);
 $color-accent-dark: darken($color-accent, 22);
 

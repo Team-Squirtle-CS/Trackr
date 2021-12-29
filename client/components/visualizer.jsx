@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import applications from './visData';
+import Navbar from './navbar.jsx';
 
 
 const visualizer = () => {
@@ -42,7 +43,7 @@ const visualizer = () => {
               <BoxContainer apps={pendings}/>
             </div>
 
-            <div className="app-stage" id="phone-screens">
+            <div className="app-stage" id="phone-screens" onDragOver={(e)=> onDragOver(e)} onDrop={(e)=> onDrop(e, "phoneScreen")}>
               <center><h2>Phone Screens</h2></center>
               <BoxContainer apps={phoneScreens}/>
             </div>
@@ -50,36 +51,36 @@ const visualizer = () => {
             <div id="interview-stages">
               <center><h2>Interviews</h2></center>
 
-              <div className="app-stage" id="behaviorals">
+              <div className="app-stage" id="behaviorals" onDragOver={(e)=> onDragOver(e)} onDrop={(e)=> onDrop(e, "behavioral")}>
                 <h3>Behavioral</h3>
                 <BoxContainer apps={behaviorals}/>
               </div>
 
-              <div className="app-stage" id="sdis">
+              <div className="app-stage" id="sdis" onDragOver={(e)=> onDragOver(e)} onDrop={(e)=> onDrop(e, "sdi")}>
                 <h3>SDIs</h3>
                 <BoxContainer apps={sdis}/>
               </div>
 
-              <div className="app-stage" id="technicals">
+              <div className="app-stage" id="technicals" onDragOver={(e)=> onDragOver(e)} onDrop={(e)=> onDrop(e, "technicals")}>
                 <h3>Technical</h3>
                 <BoxContainer apps={technicals}/>
               </div>
             </div>
             
-            <div className="app-stage" id="offers">
+            <div className="app-stage" id="offers" onDragOver={(e)=> onDragOver(e)} onDrop={(e)=> onDrop(e, "offer")}>
               <center><h2>Offers</h2></center>
               <BoxContainer apps={offers}/>
             </div>
           </div>
           
           <div id="negative-stage-container">
-            <div className="app-stage" id="rejections">
-              <h2>Rejected</h2>
-              <BoxContainer apps={rejections}/>
-            </div>
-            <div className="app-stage" id="incompletes">
+            <div className="app-stage" id="incompletes" onDragOver={(e)=> onDragOver(e)} onDrop={(e)=> onDrop(e, "incomplete")}>
               <h2>In Progress</h2>
               <BoxContainer apps={incompletes}/>
+            </div>
+            <div className="app-stage" id="rejections" onDragOver={(e)=> onDragOver(e)} onDrop={(e)=> onDrop(e, "rejected")}>
+              <h2>Rejected</h2>
+              <BoxContainer apps={rejections}/>
             </div>
           </div>
       </div>
