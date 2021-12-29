@@ -22,7 +22,10 @@ export const setPage = (page) => (dispatch) => {
   //     payload: response.data, //will hold the user object
   //   });                                                                                                                          
   // }).catch(console.error);
-}; 
+}
+
+// create a new function, getApplications, with the type GET_APPLICATIONS and payload will be all of the rows from the applications table in the DB
+
 
 // set current user based on google login 
 export const setUser = (user) => (dispatch) => {

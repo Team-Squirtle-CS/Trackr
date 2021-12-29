@@ -24,6 +24,7 @@ const pageReducer = (state = initialState, action) => {
     // default state 
     default: return { ...state };
   } 
+  // create a new case where types.GET_APPLICATIONS, return spread state and applications: action.payload
 }
 
 export default pageReducer;
