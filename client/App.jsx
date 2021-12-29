@@ -44,10 +44,6 @@ class App extends Component {
                         <Visualizer/>
                     </div>
                 );
-            default:
-                return (
-                    <h1>nothing</h1>
-                );
         }
     }
 }

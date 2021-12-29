@@ -4,7 +4,7 @@ import * as types from './actionTypes';
 export const setPage = (page) => (dispatch) => {
   //action being created
   dispatch({ 
-    type: 'SET_PAGE',
+    type: types.SET_PAGE,
     payload: page
   })
   // const request = {
@@ -25,6 +25,6 @@ export const setPage = (page) => (dispatch) => {
 export const setUser = (user) => (dispatch) => {
   //action being created
   dispatch({ 
-    type: 'SET_USER',
+    type: types.SET_USER,
     payload: user
   })}; 
