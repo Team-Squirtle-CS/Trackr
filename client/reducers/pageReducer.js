@@ -1,4 +1,5 @@
 import * as types from '../actions/actionTypes';
+import axios from 'axios';
 
 const initialState = {
   currPage: 'login',
