@@ -45,9 +45,9 @@ const columns = [
 ];
 // use mapDispatchToProps to access getApplications action from actions.js 
 // create a function that calls getApplications when the grid component is rendered or when user submits new application info
-    // need a function to populate rows with the data from applications table in DB
+// need a function to populate rows with the data from applications table in DB
 const rows = [
-    // dummy data 
+  // dummy data 
   {
     id: 1,
     company: "TechCorp",
@@ -63,6 +63,14 @@ export default function DataGridDemo() {
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid
+        sx={{
+          boxShadow: 2,
+          border: 2,
+          borderColor: 'primary.light',
+          '& .MuiDataGrid-cell:hover': {
+            color: 'primary.main',
+          },
+        }}
         rows={rows}
         columns={columns}
         pageSize={5}
