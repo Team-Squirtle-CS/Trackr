@@ -42,18 +42,6 @@ app.get('/bundle.js',
     res.status(200).sendFile(path.join(__dirname, '../build/bundle.js'));
   }
 );
-// route for signin
-app.get('/login', (req, res) => {
-  return res.json(res.locals);
-});
-
-// route for sign-up
-app.post('/signup', (req, res) => {
-  return res.status(201).json(res.locals);
-});
-
-
-
 
 // catch-all route handler for any requests to an unknown route 
 app.use((req, res) => {

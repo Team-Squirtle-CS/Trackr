@@ -1,0 +1,159 @@
+@import '_variables';
+
+body {
+  margin: 0px;
+  h1, h2, h3 {
+    color: $main-font-color;
+  }
+}
+
+#visualizer-page {
+  font-family: $title-font;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-background;
+  margin: 0px;
+  padding-bottom: 60px;
+}
+
+#positive-stage-container {
+  height: 600px;
+  width: 84%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding: 10px;
+  justify-content: space-between;
+
+  #pendings {
+    width: 30%;
+
+    .app-box {
+      margin: 10px;
+      background-color: rgb(219, 244, 254);
+    }
+  }
+
+  #phone-screens {
+    width: 25%;
+
+    .app-box {
+      margin: 10px;
+      background-color: rgb(179, 247, 255);
+    }
+  }
+
+  #interview-stages {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+
+    #interview-header {
+      margin-top: 16px;
+    }
+
+
+    #behaviorals {
+
+      .app-box {
+        margin: 10px;
+        background-color: rgb(96, 255, 231);
+      }
+    }
+
+    #sdis {
+
+      .app-box {
+        margin: 10px;
+        background-color: rgb(96, 255, 231);
+      }
+    }
+
+    #technicals {
+
+      .app-box {
+        margin: 10px;
+        background-color: rgb(96, 255, 231);
+      }
+    }
+
+    .vis-box {
+      flex-wrap: nowrap;
+      height: auto;
+
+    }
+  }
+
+  #offers {
+    width: 15%;
+
+    .app-box {
+      margin: 10px;
+      background-color: rgb(80, 255, 173)
+    }
+  }
+}
+
+#negative-stage-container {
+  margin-top: 40px;
+  width: 84%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-between;
+
+  #incompletes, #rejections {
+    height: 240px;
+    width: 48%;
+    margin: auto;
+    justify-content: flex-start;
+
+    .app-box {
+      margin: 10px;
+    }
+  }
+  #incompletes .app-box {
+    background-color: rgb(216, 216, 232);
+  }
+
+  #rejections .app-box {
+    background-color: rgb(255, 183, 170);
+  }
+
+  .vis-box {
+    height: auto;
+  }
+}
+
+.vis-box {
+  height: 94%;
+  width: 100%;
+  background-color: $color-accent;
+  border-radius: 12px;
+  box-shadow: 0px 10px 10px 0px #150326;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+.app-box {
+  height: 70px;
+  width: 70px;
+  min-width: 70px;
+  border-radius: 4px;
+  box-shadow: 0.5px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.app-stage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
