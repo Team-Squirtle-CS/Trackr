@@ -8,7 +8,8 @@
     "dev": "NODE_ENV=development webpack serve --open --hot",
     "server": "nodemon server/server.js",
     "start": "NODE_ENV=development concurrently \"webpack serve --open --hot\" \"nodemon server/server.js\"",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
   },
   "author": "Team Trackr",
   "license": "MIT",

@@ -2,7 +2,7 @@ import * as types from '../actions/actionTypes';
 
 const initialState = {
   currPage: 'login',
-  currentUserID: '',
+  user: null,
   loggedIn: false
 };
 
@@ -14,7 +14,15 @@ const pageReducer = (state = initialState, action) => {
         currPage: action.payload,
       };
     }
-    default: return state;
+    // update user info 
+    case types.SET_USER: {
+      return {
+        ...state,
+        user: action.payload
+      }
+    }
+    // default state 
+    default: return { ...state };
   } 
 }
 
